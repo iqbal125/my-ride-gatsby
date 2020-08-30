@@ -1,44 +1,36 @@
 import React from "react"
-import styles from "./footer.module.css"
-import { Link } from "gatsby"
+import { navigate } from "gatsby"
+import styled from "styled-components"
 
-const Footer = () => {
+const AppFooter = styled.div`
+  min-height: var(--footer-height);
+  justify-content: flex-end;
+  padding-right: 40px;
+  display: flex;
+  align-items: center;
+  background-color: #282c34;
+  font-size: 1em;
+  font-weight: 500;
+  color: white;
+`
+
+const AppFooterItem = styled.div`
+  text-align: right;
+  cursor: pointer;
+  margin: 0 40px;
+`
+
+export default props => {
   return (
-    <footer>
-      <div className={styles.footer_wrapper}>
-        <div className={styles.footer_main}>
-          <div className={styles.left_footer}>
-            <small className={styles.footer_link}>
-              1000 Example Rd, San Francisco, CA 94066{" "}
-            </small>
-            <small className={styles.footer_link}>1-111-1111 </small>
-            <small className={styles.footer_link}>Example@example.com</small>
-            <div className={styles.legal_section}>
-              <small className={styles.footer_legal}>Terms of Condition </small>
-              <small className={styles.footer_legal}>Privacy Policy</small>
-            </div>
-          </div>
-          <div className={styles.right_footer}>
-            <Link to="/about">
-              <div className={styles.footer_link}>About </div>
-            </Link>
-            <Link to="/services">
-              <div className={styles.footer_link}>Services </div>
-            </Link>
-            <Link to="/contact">
-              <div className={styles.footer_link}>Contact</div>
-            </Link>
-            <Link to="/blog">
-              <div className={styles.footer_link}>Blog</div>
-            </Link>
-          </div>
-        </div>
-        <div className={styles.footer_bottom}>
-          <div> Copyright &copy; 2020 Example Inc</div>
-        </div>
-      </div>
-    </footer>
+    <AppFooter>
+      <div style={{ marginLeft: "10px" }}>© Copyright 2020 myRide</div>
+      <div style={{ flexGrow: 1 }} />
+      <AppFooterItem onClick={() => navigate("/contact")}>
+        Contact Us
+      </AppFooterItem>
+      <AppFooterItem onClick={() => navigate("/support")}>
+        Support
+      </AppFooterItem>
+    </AppFooter>
   )
 }
-
-export default Footer
