@@ -8,7 +8,7 @@ import {
   NavPortalItem,
 } from "../PortalStyles"
 
-export default props => {
+const City = props => {
   return (
     <>
       <StyledLeftNav>
@@ -24,3 +24,5 @@ export default props => {
     </>
   )
 }
+
+export default City
