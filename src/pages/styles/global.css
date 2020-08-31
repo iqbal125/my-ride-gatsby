@@ -1,18 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Oswald:regular,bold,italic&subset=latin,latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic&subset=latin,latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Lobster:regular,bold,italic&subset=latin,latin-ext");
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+
+:root {
+  --banner-height: 3em;
+  --footer-height: 1.5em;
+  --margin-spacing: 10px;
+}
+
 html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+body {
+  margin: 0; /* so we take up the whole screen width/height */
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto";
-  font-weight: 100;
+.App {
+  margin: var(--margin-spacing) 10px;
+  font-size: 0.75em;
+  height: calc(
+    100vh - 20px
+  ); /* No  idea why i can't get this  calc to use footer height!*/
+  display: flex;
+  flex-direction: column;
 }
